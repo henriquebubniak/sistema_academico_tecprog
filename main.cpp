@@ -19,3 +19,5 @@ int main()
 }
 //teste
 void teste();
+//teste
+int teste2();
