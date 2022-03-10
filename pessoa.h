@@ -5,6 +5,7 @@ class Pessoa
 {
 public:
     Pessoa (const char* n, int d, int m, int a);
+    Pessoa();
     void calcula_idade(int diaA, int mesA, int anoA);
     void mostra_idade();
 

@@ -13,6 +13,14 @@ Pessoa::Pessoa(const char *n, int d, int m, int a)
     get_data_int(&diaA, &mesA, &anoA);
     calcula_idade (diaA, mesA, anoA);
 }
+Pessoa::Pessoa()
+{
+    nome = "";
+    diaN = 0;
+    mesN = 0;
+    anoN = 0;
+    idade = 0;
+}
 
 void Pessoa::calcula_idade(int diaA, int mesA, int anoA)
 {
