@@ -9,7 +9,9 @@ Pessoa::Pessoa(const char *n, int d, int m, int a)
     mesN = m;
     anoN = a;
     idade = 0;
-    calcula_idade (9, 2, 2022);
+    int diaA, mesA, anoA;
+    get_data_int(&diaA, &mesA, &anoA);
+    calcula_idade (diaA, mesA, anoA);
 }
 
 void Pessoa::calcula_idade(int diaA, int mesA, int anoA)
@@ -24,5 +26,5 @@ void Pessoa::calcula_idade(int diaA, int mesA, int anoA)
 
 void Pessoa::mostra_idade()
 {
-    cout << "a idade de" << nome << "é" << idade << "anos\n" << endl;
+    cout << "a idade de " << nome << " é " << idade << " anos\n" << endl;
 }
