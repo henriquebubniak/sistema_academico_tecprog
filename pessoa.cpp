@@ -1,4 +1,6 @@
 #include "pessoa.h"
+#include <iostream>
+using namespace std;
 
 Pessoa::Pessoa(const char *n, int d, int m, int a)
 {
@@ -7,6 +9,7 @@ Pessoa::Pessoa(const char *n, int d, int m, int a)
     mesN = m;
     anoN = a;
     idade = 0;
+    calcula_idade (9, 2, 2022);
 }
 
 void Pessoa::calcula_idade(int diaA, int mesA, int anoA)
@@ -21,5 +24,5 @@ void Pessoa::calcula_idade(int diaA, int mesA, int anoA)
 
 void Pessoa::mostra_idade()
 {
-    printf("a idade de %s é %u anos\n", nome, idade);
+    cout << "a idade de" << nome << "é" << idade << "anos\n" << endl;
 }
