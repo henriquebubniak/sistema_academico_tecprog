@@ -36,3 +36,8 @@ void Pessoa::mostra_idade()
 {
     cout << "a idade de " << nome << " é " << idade << " anos\n" << endl;
 }
+
+void Pessoa::associa_uni(Universidade* u)
+{
+    uni = u;
+}
