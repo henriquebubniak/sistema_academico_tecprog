@@ -1,4 +1,5 @@
 #include "pessoa.h"
+#include "professor.h"
 #include <iostream>
 using namespace std;
 
@@ -12,8 +13,8 @@ int main()
     Cambridge.cria_dep("Departamento de matemática");
     Princeton.cria_dep("Departamento de física");
 //cria pessoas
-    Pessoa Einstein("Albert Einstein", 14, 3, 1879);
-    Pessoa Newton("Isaac Newton", 4, 1, 1643);
+    Professor Einstein("Albert Einstein", 14, 3, 1879);
+    Professor Newton("Isaac Newton", 4, 1, 1643);
 //associa universidades
     Einstein.associa_uni(&Princeton);
     Newton.associa_uni(&Cambridge);
@@ -22,8 +23,10 @@ int main()
     Newton.associa_dep(Cambridge.get_dep());
 
 //mostra dados
-    Einstein.mostra_dados();
-    Newton.mostra_dados();
+    Einstein.mostra_dados_pessoais();
+    Einstein.mostra_dados_academicos();
+    Newton.mostra_dados_pessoais();
+    Newton.mostra_dados_academicos();
 
     return 0;
 }

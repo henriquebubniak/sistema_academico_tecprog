@@ -1,6 +1,5 @@
 #pragma once
-
-#include <stdio.h>
+#include <iostream>
 #include <string>
 #include "tempo.h"
 #include "universidade.h"
@@ -13,16 +12,11 @@ public:
     Pessoa (string n, int d, int m, int a);
     Pessoa();
     void calcula_idade(int diaA, int mesA, int anoA);
-    void mostra_dados();
-    void associa_uni(Universidade* u);
-    void associa_dep(Departamento* dep);
-
-private:
+    void mostra_dados_pessoais();
+protected:
     string nome;
     unsigned diaN;
     unsigned mesN;
     unsigned anoN;
     unsigned idade;  
-    Universidade* uni;
-    Departamento* dep;
 };
