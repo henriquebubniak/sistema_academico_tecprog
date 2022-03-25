@@ -7,6 +7,6 @@ void get_data_int(int* d, int* m, int* a)
    time (&myTime);
    tempo = localtime(&myTime);
    *d = tempo->tm_mday;
-   *m = tempo->tm_mon;
+   *m = tempo->tm_mon+1;
    *a = tempo->tm_year + 1900;
 }
