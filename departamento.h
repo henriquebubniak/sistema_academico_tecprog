@@ -13,6 +13,7 @@ public:
     string get_nome();
     void adiciona_disciplina(Disciplina* d);
     void mostra_disciplinas();
+    void remove_disciplina(string n);
 private:
     string nome;
     Disciplina* lista_disc;

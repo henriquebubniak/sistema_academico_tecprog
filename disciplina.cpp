@@ -23,3 +23,7 @@ Disciplina* Disciplina::get_prox()
 {
     return prox;
 }
+void Disciplina::adiciona_dep(Departamento* d)
+{
+    dep = d;
+}

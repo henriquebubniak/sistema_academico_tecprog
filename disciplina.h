@@ -11,6 +11,7 @@ public:
     string get_nome();
     void adiciona_prox(Disciplina* d);
     Disciplina* get_prox();
+    void adiciona_dep(Departamento *d);
 private:
     string nome;
     Departamento* dep;
