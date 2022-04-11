@@ -3,7 +3,6 @@ Disciplina::Disciplina(string n)
 {
     nome = n;
     dep = NULL;
-    prox = NULL;
     lista_aluno = NULL;
     primeiro_aluno = NULL;
 }
@@ -11,21 +10,12 @@ Disciplina::Disciplina()
 {
     nome = "";
     dep = NULL;
-    prox = NULL;
     lista_aluno = NULL;
     primeiro_aluno = NULL;
 }
 string Disciplina::get_nome()
 {
     return nome;
-}
-void Disciplina::adiciona_prox(Disciplina *d)
-{
-    prox = d;
-}
-Disciplina *Disciplina::get_prox()
-{
-    return prox;
 }
 void Disciplina::adiciona_dep(Departamento *d)
 {
@@ -77,4 +67,57 @@ Disciplina::~Disciplina()
         }
         delete aux1;
     }
+}
+
+void Disciplina::incrementa_faltas(string n)
+{
+    ElemAluno* aux;
+    aux = primeiro_aluno;
+    while (aux->get_nome() != n && aux != NULL) 
+    {
+        aux = aux->get_prox();
+    }
+    if (aux->get_nome() == n)
+        aux->incrementa_faltas();
+
+    cout << "O aluno " << aux->get_nome() << " agora tem " << aux->get_faltas() << " faltas na disciplina " << nome << endl;
+}
+void Disciplina::adiciona_nota_p1(string n, float p)
+{
+    ElemAluno* aux;
+    aux = primeiro_aluno;
+    while (aux->get_nome() != n && aux != NULL) 
+    {
+        aux = aux->get_prox();
+    }
+    if (aux->get_nome() == n)
+        aux->adiciona_nota_p1(p);
+
+    cout << "O aluno " << aux->get_nome() << " tirou " << p << " na P1 da disciplina " << nome << endl;
+}
+void Disciplina::adiciona_nota_p2(string n, float p)
+{
+    ElemAluno* aux;
+    aux = primeiro_aluno;
+    while (aux->get_nome() != n && aux != NULL) 
+    {
+        aux = aux->get_prox();
+    }
+    if (aux->get_nome() == n)
+        aux->adiciona_nota_p2(p);
+
+    cout << "O aluno " << aux->get_nome() << " tirou " << p << " na P2 da disciplina " << nome << endl;
+}
+void Disciplina::adiciona_nota_p3(string n, float p)
+{
+    ElemAluno* aux;
+    aux = primeiro_aluno;
+    while (aux->get_nome() != n && aux != NULL) 
+    {
+        aux = aux->get_prox();
+    }
+    if (aux->get_nome() == n)
+        aux->adiciona_nota_p3(p);
+
+    cout << "O aluno " << aux->get_nome() << " tirou " << p << " na P3 da disciplina " << nome << endl;
 }

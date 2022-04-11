@@ -39,3 +39,7 @@ string Aluno::get_nome()
 {
     return nome;
 }
+Aluno::~Aluno()
+{
+    
+}

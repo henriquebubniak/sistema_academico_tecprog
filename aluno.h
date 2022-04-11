@@ -12,6 +12,7 @@ public:
     string get_nome();
     Aluno(string n, int d, int m, int a, long int r = 0);
     Aluno();
+    ~Aluno();
 private:
     Universidade* uni;
     Departamento* dep;

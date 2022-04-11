@@ -10,15 +10,16 @@ public:
     Disciplina();
     ~Disciplina();
     string get_nome();
-    void adiciona_prox(Disciplina* d);
-    Disciplina* get_prox();
     void adiciona_dep(Departamento *d);
     void adiciona_aluno(Aluno* a);
     void mostra_alunos();
+    void incrementa_faltas(string n);
+    void adiciona_nota_p1(string n, float p);
+    void adiciona_nota_p2(string n, float p);
+    void adiciona_nota_p3(string n, float p);
 private:
     string nome;
     Departamento* dep;
-    Disciplina* prox;
     ElemAluno* lista_aluno;
     ElemAluno* primeiro_aluno;
 };

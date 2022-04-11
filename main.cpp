@@ -35,12 +35,18 @@ int main()
     UTFPR.get_dep()->adiciona_disciplina(&estruturas);
     UTFPR.get_dep()->adiciona_disciplina(&tecnicas);
     UTFPR.get_dep()->adiciona_disciplina(&estruturas2);
-    UTFPR.get_dep()->remove_disciplina("Fundamentos de Programaçao");
+    UTFPR.get_dep()->remove_disciplina("Estruturas de dados");
     fundamentos.adiciona_aluno(&Henrique);
     fundamentos.adiciona_aluno(&Zamba);
     fundamentos.adiciona_aluno(&Greg);
     estruturas2.adiciona_aluno(&Greg);
     estruturas2.adiciona_aluno(&Henrique);
+//adiciona notas e faltas
+    fundamentos.incrementa_faltas("Henrique Ribas Zambenedetti");
+    fundamentos.adiciona_nota_p1("Henrique Ribas Zambenedetti", 8.7);
+    fundamentos.adiciona_nota_p1("Henrique Gomes Pinto Bubniak", 9);
+    fundamentos.adiciona_nota_p1("Gregório", 9.5);
+
 //mostra dados
     UTFPR.get_dep()->mostra_disciplinas();
     Henrique.mostra_dados_pessoais();
