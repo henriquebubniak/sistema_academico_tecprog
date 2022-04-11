@@ -1,5 +1,6 @@
 #pragma once
 #include "disciplina.h"
+#include "elemdisciplina.h"
 #include <string>
 #include <list>
 #include <iostream>
@@ -16,5 +17,5 @@ public:
     void remove_disciplina(string n);
 private:
     string nome;
-    Disciplina* lista_disc;
+    ElemDisciplina* lista_disc;
 };

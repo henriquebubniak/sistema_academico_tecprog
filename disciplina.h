@@ -8,6 +8,7 @@ class Disciplina
 public:
     Disciplina(string n);
     Disciplina();
+    ~Disciplina();
     string get_nome();
     void adiciona_prox(Disciplina* d);
     Disciplina* get_prox();
