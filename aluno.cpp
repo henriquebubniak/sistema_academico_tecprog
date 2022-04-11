@@ -1,4 +1,5 @@
 #include "aluno.h"
+#include "universidade.h"
 
 Aluno::Aluno(string n, int d, int m, int a, long int r):
 Pessoa(n, d, m, a)
@@ -32,4 +33,9 @@ void Aluno::mostra_dados_academicos()
         cout << "Ele está associado a universidade de " << uni->get_nome() <<
         ", no departamento " << uni->get_dep()->get_nome() << ". " << "Seu RA é "
         << RA << "." << endl;
+}
+
+string Aluno::get_nome()
+{
+    return nome;
 }

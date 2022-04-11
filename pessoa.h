@@ -2,7 +2,6 @@
 #include <iostream>
 #include <string>
 #include "tempo.h"
-#include "universidade.h"
 
 using namespace std;
 
