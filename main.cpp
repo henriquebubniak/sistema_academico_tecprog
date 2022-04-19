@@ -20,11 +20,12 @@ int main()
     Aluno Zamba("Henrique Ribas Zambenedetti", 24, 10, 2003);
     Aluno Greg("Gregório", 7,7,2003);
     Professor Simao("Simão", 12,7,1973);
+//associa departamentos
+    UTFPR.adiciona_dep(&DAINF);
 //associa universidades
     Henrique.associa_uni(&UTFPR);
     Zamba.associa_uni(&UTFPR);
     Greg.associa_uni(&UTFPR);
-    Simao.associa_uni(&UTFPR);
 //associa departamentos
     Simao.associa_dep(&DAINF);
 //associa disciplinas

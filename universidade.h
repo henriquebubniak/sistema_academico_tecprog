@@ -8,6 +8,7 @@ class Universidade
 {
 public:
     Universidade(string n = "");
+    ~Universidade();
     string get_nome();
     void adiciona_dep(Departamento* d);
     //void remove_dep(string n);

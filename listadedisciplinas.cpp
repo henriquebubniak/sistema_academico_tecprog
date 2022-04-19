@@ -2,7 +2,7 @@
 #include "elemdisciplina.h"
 #include "departamento.h"
 #include "disciplina.h"
-void ListaDeDisciplinas::inicializa_departamento(Departamento *d)
+void ListaDeDisciplinas::inicializa_departamento(Departamento* d)
 {
     ultima_disc = NULL;
     primeira_disc = NULL;
@@ -13,7 +13,7 @@ void ListaDeDisciplinas::adiciona_disciplina(Disciplina *d)
     ElemDisciplina *aux;
     aux = new ElemDisciplina();
     aux->adiciona_disciplina_apontada(d);
-    if (ultima_disc->get_nome() == "")
+    if (ultima_disc == NULL)
     {
         primeira_disc = aux;
         ultima_disc = aux;

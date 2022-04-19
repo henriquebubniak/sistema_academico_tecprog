@@ -4,6 +4,8 @@
 #include "elemdep.h"
 void ListaDeDepartamentos::inicializa_universidade(Universidade* u)
 {
+    primeiro_dep = NULL;
+    ultimo_dep = NULL;
     universidade = u;
 }
 void ListaDeDepartamentos::adiciona_departamento(Departamento* d)

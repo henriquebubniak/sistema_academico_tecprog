@@ -22,6 +22,7 @@ void Professor::associa_uni(Universidade* u)
 void Professor::associa_dep(Departamento* d)
 {
     dep = d;
+    uni = d->get_uni();
 }
 
 void Professor::mostra_dados_academicos()
