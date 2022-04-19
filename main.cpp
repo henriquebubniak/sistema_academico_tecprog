@@ -1,15 +1,15 @@
-#include "pessoa.h"
+#include "universidade.h"
+#include "departamento.h"
+#include "disciplina.h"
+#include "aluno.h"
 #include "professor.h"
-#include <iostream>
-using namespace std;
-
 
 int main()
 {
 //cria universidades
     Universidade UTFPR("Universidade Tecnológica do Paraná");
 //cria departamentos
-    UTFPR.cria_dep("DAINF");
+    Departamento DAINF("DAINF");
 //cria disciplinas
     Disciplina fundamentos("Fundamentos de Programação");
     Disciplina estruturas("Estruturas de dados 1");
@@ -26,16 +26,13 @@ int main()
     Greg.associa_uni(&UTFPR);
     Simao.associa_uni(&UTFPR);
 //associa departamentos
-    Henrique.associa_dep(UTFPR.get_dep());
-    Zamba.associa_dep(UTFPR.get_dep());
-    Greg.associa_dep(UTFPR.get_dep());
-    Simao.associa_dep(UTFPR.get_dep());
+    Simao.associa_dep(&DAINF);
 //associa disciplinas
-    UTFPR.get_dep()->adiciona_disciplina(&fundamentos);
-    UTFPR.get_dep()->adiciona_disciplina(&estruturas);
-    UTFPR.get_dep()->adiciona_disciplina(&tecnicas);
-    UTFPR.get_dep()->adiciona_disciplina(&estruturas2);
-    UTFPR.get_dep()->remove_disciplina("Estruturas de dados");
+    DAINF.adiciona_disciplina(&fundamentos);
+    DAINF.adiciona_disciplina(&estruturas);
+    DAINF.adiciona_disciplina(&tecnicas);
+    DAINF.adiciona_disciplina(&estruturas2);
+    //UTFPR.get_dep()->remove_disciplina("Estruturas de dados");
     fundamentos.adiciona_aluno(&Henrique);
     fundamentos.adiciona_aluno(&Zamba);
     fundamentos.adiciona_aluno(&Greg);
@@ -48,7 +45,7 @@ int main()
     fundamentos.adiciona_nota_p1("Gregório", 9.5);
 
 //mostra dados
-    UTFPR.get_dep()->mostra_disciplinas();
+    DAINF.mostra_disciplinas();
     Henrique.mostra_dados_pessoais();
     Henrique.mostra_dados_academicos();
     Zamba.mostra_dados_pessoais();

@@ -13,6 +13,10 @@ void ElemDisciplina::adiciona_prox(ElemDisciplina* d)
 {
     prox = d;
 }
+void ElemDisciplina::adiciona_anterior(ElemDisciplina* d)
+{
+    anterior = d;
+}
 string ElemDisciplina::get_nome()
 {
     return disciplina_apontada->get_nome();

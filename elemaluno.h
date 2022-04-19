@@ -1,3 +1,4 @@
+#pragma once
 #include "aluno.h"
 class ElemAluno
 {

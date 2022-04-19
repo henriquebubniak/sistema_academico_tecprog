@@ -1,8 +1,11 @@
 #pragma once
-#include "elemaluno.h"
+#include "professor.h"
+#include "listadealunos.h"
+#include <list>
 #include <string>
 using namespace std;
 class Departamento;
+class Professor;
 class Disciplina 
 {
 public:
@@ -20,6 +23,6 @@ public:
 private:
     string nome;
     Departamento* dep;
-    ElemAluno* lista_aluno;
-    ElemAluno* primeiro_aluno;
+    ListaDeAlunos lista_alunos;
+    Professor* professor;
 };

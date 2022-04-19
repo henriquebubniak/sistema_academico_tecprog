@@ -3,22 +3,21 @@
 Universidade::Universidade(string n)
 {
     nome = n;
+    lista_dep->inicializa_universidade(this);
 }
-Universidade::Universidade()
-{
-    nome = "";
-}
-
 string Universidade::get_nome()
 {
     return nome;
 }
-void Universidade::cria_dep(string n_dep)
+void Universidade::adiciona_dep(Departamento* d)
 {
-    dep.inicializa_dep(n_dep);
+    lista_dep->adiciona_departamento(d);
 }
-
-Departamento* Universidade::get_dep()
+/*void Universidade::remove_dep(string n)
 {
-    return &dep;
+    lista_dep->remove_departamento(n);
+}*/
+void Universidade::mostra_deps()
+{
+    lista_dep->mostra_departamentos();
 }

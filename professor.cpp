@@ -28,5 +28,5 @@ void Professor::mostra_dados_academicos()
 {
     if(uni != NULL && dep != NULL)
         cout << "Ele está associado a universidade de " << uni->get_nome() <<
-        ", no departamento " << uni->get_dep()->get_nome() << "." << endl;
+        ", no departamento " << dep->get_nome() << "." << endl;
 }

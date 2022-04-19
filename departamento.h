@@ -1,11 +1,11 @@
 #pragma once
 #include "disciplina.h"
-#include "elemdisciplina.h"
+#include "listadedisciplinas.h"
 #include <string>
 #include <list>
 #include <iostream>
 using namespace std;
-class Disciplina;
+class ListaDeDisciplinas;
 class Departamento
 {
 public:
@@ -17,5 +17,5 @@ public:
     void remove_disciplina(string n);
 private:
     string nome;
-    ElemDisciplina* lista_disc;
+    ListaDeDisciplinas* lista_disciplinas;
 };
