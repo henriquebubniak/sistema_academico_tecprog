@@ -10,8 +10,9 @@ class ListaDeDepartamentos
 public:
     void inicializa_universidade(Universidade* u);
     void adiciona_departamento(Departamento* d);
-   // void remove_departamento(string n);
+    void remove_departamento(string n);
     void mostra_departamentos();
+    ElemDep* get_primeiro_dep();
     ListaDeDepartamentos(Universidade* u = NULL);
     ~ListaDeDepartamentos();
 private:

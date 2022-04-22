@@ -26,3 +26,7 @@ ElemDisciplina* ElemDisciplina::get_prox()
 {
     return prox;
 }
+Disciplina* ElemDisciplina::get_disciplina_apontada()
+{
+    return disciplina_apontada;
+}

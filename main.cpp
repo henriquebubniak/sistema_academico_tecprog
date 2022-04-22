@@ -3,10 +3,11 @@
 #include "disciplina.h"
 #include "aluno.h"
 #include "professor.h"
+#include "principal.h"
 
 int main()
 {
-//cria universidades
+/*//cria universidades
     Universidade UTFPR("Universidade Tecnológica do Paraná");
 //cria departamentos
     Departamento DAINF("DAINF");
@@ -33,7 +34,7 @@ int main()
     DAINF.adiciona_disciplina(&estruturas);
     DAINF.adiciona_disciplina(&tecnicas);
     DAINF.adiciona_disciplina(&estruturas2);
-    //UTFPR.get_dep()->remove_disciplina("Estruturas de dados");
+    DAINF.remove_disciplina("Estruturas de dados");
     fundamentos.adiciona_aluno(&Henrique);
     fundamentos.adiciona_aluno(&Zamba);
     fundamentos.adiciona_aluno(&Greg);
@@ -56,5 +57,8 @@ int main()
     fundamentos.mostra_alunos();
     estruturas2.mostra_alunos();
 
+    return 0;*/
+    Principal sistema;
+    sistema.menu();
     return 0;
 }

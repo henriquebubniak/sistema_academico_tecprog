@@ -5,6 +5,7 @@ Universidade::Universidade(string n)
     nome = n;
     lista_dep = new ListaDeDepartamentos;
     lista_dep->inicializa_universidade(this);
+    lista_alunos = new ListaDeAlunos;
 }
 Universidade::~Universidade()
 {
@@ -26,4 +27,8 @@ void Universidade::adiciona_dep(Departamento* d)
 void Universidade::mostra_deps()
 {
     lista_dep->mostra_departamentos();
+}
+void Universidade::adiciona_aluno(Aluno* a)
+{
+    lista_alunos->adiciona_aluno(a);
 }

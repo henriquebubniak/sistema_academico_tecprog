@@ -8,8 +8,9 @@ class Aluno : public Pessoa
 public:
     void associa_uni(Universidade* u);
     void mostra_dados_academicos();
+    void set_ra(int r);
     string get_nome();
-    Aluno(string n, int d, int m, int a, long int r = 0);
+    Aluno(string n, int d, int m, int a);
     Aluno();
     ~Aluno();
 private:

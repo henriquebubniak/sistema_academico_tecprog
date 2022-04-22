@@ -27,13 +27,13 @@ void ListaDeDisciplinas::adiciona_disciplina(Disciplina *d)
 }
 void ListaDeDisciplinas::remove_disciplina(string n)
 {
-    ElemDisciplina *l = ultima_disc;
+    ElemDisciplina *l = primeira_disc;
     ElemDisciplina *aux;
     ElemDisciplina *aux1;
     if (l->get_nome() == n)
     {
-        aux1 = ultima_disc;
-        ultima_disc = l->get_prox();
+        aux1 = primeira_disc;
+        primeira_disc = l->get_prox();
         delete aux1;
     }
     else
@@ -84,4 +84,8 @@ ListaDeDisciplinas::~ListaDeDisciplinas()
         }
         delete aux1;
     }
+}
+ElemDisciplina* ListaDeDisciplinas::get_primeira_disc()
+{
+    return primeira_disc;
 }

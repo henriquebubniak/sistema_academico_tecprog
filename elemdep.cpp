@@ -27,3 +27,11 @@ ElemDep* ElemDep::get_prox()
 {
     return prox;
 }
+ElemDep* ElemDep::get_anterior()
+{
+    return anterior;
+}
+Departamento* ElemDep::get_dep_apontado()
+{
+    return departamento_apontado;
+}

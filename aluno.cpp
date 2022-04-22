@@ -1,11 +1,11 @@
 #include "aluno.h"
 #include "universidade.h"
 
-Aluno::Aluno(string n, int d, int m, int a, long int r):
+Aluno::Aluno(string n, int d, int m, int a):
 Pessoa(n, d, m, a)
 {
     uni = NULL;
-    RA = r;
+    RA = 0;
 }
 
 Aluno::Aluno():
@@ -33,4 +33,8 @@ string Aluno::get_nome()
 }
 Aluno::~Aluno()
 {    
+}
+void Aluno::set_ra(int r)
+{
+    RA = r;
 }

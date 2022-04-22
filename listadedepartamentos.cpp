@@ -25,20 +25,20 @@ void ListaDeDepartamentos::adiciona_departamento(Departamento* d)
         ultimo_dep = aux;
     }
 }
-/*void ListaDeDepartamentos::remove_departamento(string n)
+void ListaDeDepartamentos::remove_departamento(string n)
 {
     ElemDep* aux;
     aux = primeiro_dep;
     while(aux != NULL && aux->get_nome() != n){}
     if (aux == NULL)
-        exit(1);
+        return;
     else
     {
         aux->get_anterior()->adiciona_prox(aux->get_prox());
         aux->get_prox()->adiciona_anterior(aux->get_anterior());
         delete aux;
     }
-}*/
+}
 
 void ListaDeDepartamentos::mostra_departamentos()
 {
@@ -75,4 +75,8 @@ ListaDeDepartamentos::~ListaDeDepartamentos()
         }
         delete aux1;        
     }
+}
+ElemDep* ListaDeDepartamentos::get_primeiro_dep()
+{
+    return primeiro_dep;
 }

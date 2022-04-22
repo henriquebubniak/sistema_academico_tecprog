@@ -11,6 +11,7 @@ public:
     void adiciona_disciplina(Disciplina* a);
     void remove_disciplina(string n);
     void mostra_disciplinas();
+    ElemDisciplina* get_primeira_disc();
     ListaDeDisciplinas(Departamento* d = NULL);
     ~ListaDeDisciplinas();
 private:

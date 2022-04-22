@@ -11,6 +11,7 @@ public:
     string get_nome();
     ElemDep* get_prox();
     ElemDep* get_anterior();
+    Departamento* get_dep_apontado();
 
 private:
     ElemDep* prox;
