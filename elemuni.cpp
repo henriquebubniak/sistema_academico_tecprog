@@ -1,5 +1,6 @@
 #include "elemuni.h"
 #include "departamento.h"
+#include "universidade.h"
 
 ElemUni::ElemUni()
 {

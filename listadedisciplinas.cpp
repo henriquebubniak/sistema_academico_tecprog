@@ -12,7 +12,7 @@ void ListaDeDisciplinas::adiciona_disciplina(Disciplina *d)
 {
     ElemDisciplina *aux;
     aux = new ElemDisciplina();
-    aux->adiciona_disciplina_apontada(d);
+    aux->adiciona_disciplina_apontada(d);    
     if (ultima_disc == NULL)
     {
         primeira_disc = aux;
@@ -50,6 +50,18 @@ void ListaDeDisciplinas::remove_disciplina(string n)
             l->adiciona_prox(aux);
         }
     }
+}
+Disciplina* ListaDeDisciplinas::localiza_disc(string n)
+{
+    ElemDisciplina* aux = get_primeira_disc();
+    while(aux != NULL && aux->get_nome() != n)
+    {
+        aux = aux->get_prox();
+    }
+    if (aux != NULL)
+        return aux->get_disciplina_apontada();
+    else
+        return NULL;      
 }
 void ListaDeDisciplinas::mostra_disciplinas()
 {

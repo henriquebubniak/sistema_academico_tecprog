@@ -1,6 +1,7 @@
 #pragma once
 #include "departamento.h"
 class Departamento;
+class Universidade;
 class ElemUni
 {
 public:

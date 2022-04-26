@@ -12,9 +12,11 @@ public:
     ElemDep* get_prox();
     ElemDep* get_anterior();
     Departamento* get_dep_apontado();
+    void set_id(int i);
 
 private:
     ElemDep* prox;
     ElemDep* anterior;
     Departamento* departamento_apontado;
+    int id_dep;
 };

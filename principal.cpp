@@ -4,11 +4,12 @@
 Principal::Principal()
 {
     get_data_int(&diaA, &mesA, &anoA);
+    recuperar_dados();
     menu();
 }
 Principal::~Principal()
 {
-
+    lista_unis.gravar_dados();
 }
 void Principal::menu()
 {
@@ -27,7 +28,8 @@ void Principal::menu()
         menu_leitura();
         break;
     case 3:
-        exit(1);
+        gravar_dados();
+        exit(0);
     default:
         cout << "Opção inválida" << endl;
         break;
@@ -64,6 +66,27 @@ void Principal::menu_cadastro()
         break;
     }
 }
+void Principal::menu_leitura()
+{
+    int op;
+    system("clear");
+    cout << "1 - ler universidades no sistema" << endl;
+    cout << "2 - ler departamentos no sistema" << endl;
+    cout << "3 - ler disciplinas no sistema" << endl;
+    cout << "4 - ler alunos no sistema" << endl;
+    cin >> op;
+    switch (op)
+    {
+    case 1:
+        le_universidades();
+        break;
+    case 2:
+        le_departamentos();
+        break;
+    default:
+        break;
+    }
+}
 void Principal::cadastro_universidade()
 {
     string nome_uni;
@@ -91,7 +114,7 @@ void Principal::cadastro_departamento()
     cout << "insira o nome da universidade a qual o departamento pertence." << endl;
     cin >> nome_uni;
     aux_dep = new Departamento(nome_dep);
-    aux_uni = localiza_uni(nome_uni);
+    aux_uni = lista_unis.localiza_uni(nome_uni);
     if (aux_uni != NULL)
     {
         aux_uni->adiciona_dep(aux_dep);
@@ -118,7 +141,7 @@ void Principal::cadastro_disciplina()
     cout << "insira o nome do departamento a qual a disciplina pertence." << endl;
     cin >> nome_dep;
     aux_disc = new Disciplina(nome_disc);
-    aux_dep = localiza_dep(nome_dep);
+    aux_dep = lista_deps.localiza_dep(nome_dep);
     if (aux_dep != NULL)
     {
         aux_dep->adiciona_disciplina(aux_disc);
@@ -133,35 +156,6 @@ void Principal::cadastro_disciplina()
     getchar();
     menu();
 }
-void Principal::menu_leitura()
-{
-    int op;
-    int i = 1;
-    int j = 1;
-    ElemUni* aux_uni;
-    aux_uni = lista_unis.get_primeira_uni();
-    system("clear");
-    while(aux_uni != NULL)
-    {
-        cout << i << " - " << aux_uni->get_nome() << endl;
-        i++;
-        aux_uni = aux_uni->get_prox();
-    }    
-    cout << i << " - Sair" << endl;
-    cin >> op;
-    aux_uni = lista_unis.get_primeira_uni();
-    while(j != op)
-    {
-        aux_uni = aux_uni->get_prox();
-        j++;
-    }
-    aux_uni->get_uni_apontada()->mostra_deps();   
-    getchar();
-    getchar(); 
-    menu_leitura();
-}
-
-
 void Principal::cadastro_aluno()
 {
     int op;
@@ -202,7 +196,7 @@ void Principal::cadastro_aluno_novo()
     cin >> nome_uni;
     aux_aluno = new Aluno(nome_aluno, diaN, mesN, anoN);
     //aux_aluno->set_ra(lista_alunos.get_quant_alunos());
-    aux_uni = localiza_uni(nome_uni);
+    aux_uni = lista_unis.localiza_uni(nome_uni);
     if (aux_uni != NULL)
     {
         aux_uni->adiciona_aluno(aux_aluno);
@@ -241,7 +235,7 @@ void Principal::cadastro_aluno_em_disc(Aluno* a)
     cout << "insira o nome da disciplina em que deseja cadastrar o aluno" << endl;
     cin.ignore();
     getline(cin, nome_disc);
-    aux_disc = localiza_disc(nome_disc);
+    aux_disc = lista_discs.localiza_disc(nome_disc);
     system("clear");
     if (aux_disc != NULL)
     {
@@ -253,39 +247,60 @@ void Principal::cadastro_aluno_em_disc(Aluno* a)
     getchar();
     menu();
 }
-Universidade* Principal::localiza_uni(string n)
+void Principal::le_universidades()
 {
-    ElemUni* aux = lista_unis.get_primeira_uni();
-    while(aux != NULL && aux->get_nome() != n)
+    int op;
+    string nome_uni;
+    system("clear");
+    lista_unis.mostra_universidades();
+    cout << "1 - ler alunos cadastrados em uma universidade" << endl;
+    cout << "2 - ler departamentos cadastrados em uma universidade" << endl;
+    cout << "3 - voltar ao menu principal" << endl;
+    cin >> op;
+    switch (op)
     {
-        aux = aux->get_prox();
+    case 1:
+        system("clear");
+        cout << "digite o nome da universidade." << endl;
+        cin >> nome_uni;
+        lista_unis.localiza_uni(nome_uni)->mostra_alunos();
+        break;
+    
+    default:
+        break;
     }
-    if (aux != NULL)
-        return aux->get_uni_apontada();
-    else
-        return NULL;    
 }
-Departamento* Principal::localiza_dep(string n)
+void Principal::le_departamentos()
 {
-    ElemDep* aux = lista_deps.get_primeiro_dep();
-    while(aux != NULL && aux->get_nome() != n)
+   int op;
+    string nome_dep;
+    system("clear");
+    lista_deps.mostra_departamentos();
+    cout << "1 - ler disciplinas cadastrados em um departamento" << endl;
+    cout << "2 - ler departamentos cadastrados em uma universidade" << endl;
+    cout << "3 - voltar ao menu principal" << endl;
+    cin >> op;
+    switch (op)
     {
-        aux = aux->get_prox();
-    }
-    if (aux != NULL)
-        return aux->get_dep_apontado();
-    else
-        return NULL;    
+    case 1:
+        system("clear");
+        cout << "digite o nome da departamento." << endl;
+        cin >> nome_dep;
+        lista_deps.localiza_dep(nome_dep)->mostra_disciplinas();
+        break;
+    case 3:
+        menu();    
+    default:
+        break;
+    } 
 }
-Disciplina* Principal::localiza_disc(string n)
+void Principal::gravar_dados()
 {
-    ElemDisciplina* aux = lista_discs.get_primeira_disc();
-    while(aux != NULL && aux->get_nome() != n)
-    {
-        aux = aux->get_prox();
-    }
-    if (aux != NULL)
-        return aux->get_disciplina_apontada();
-    else
-        return NULL;      
+    lista_unis.gravar_dados();
+    lista_deps.gravar_dados();
+}
+void Principal::recuperar_dados()
+{
+    lista_unis.recuperar_dados();
+    lista_deps.recuperar_dados(&lista_unis);
 }

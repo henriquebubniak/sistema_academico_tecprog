@@ -28,6 +28,10 @@ void Universidade::mostra_deps()
 {
     lista_dep->mostra_departamentos();
 }
+void Universidade::mostra_alunos()
+{
+    lista_alunos->mostra_alunos();
+}
 void Universidade::adiciona_aluno(Aluno* a)
 {
     lista_alunos->adiciona_aluno(a);

@@ -4,6 +4,7 @@
 #include "aluno.h"
 #include "listadealunos.h"
 #include <string>
+#include <fstream>
 using namespace std;
 class ListaDeDepartamentos;
 class Universidade
@@ -16,6 +17,7 @@ public:
     void adiciona_dep(Departamento* d);
     //void remove_dep(string n);
     void mostra_deps();
+    void mostra_alunos();
 private:
     string nome;
     ListaDeDepartamentos* lista_dep;

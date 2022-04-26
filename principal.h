@@ -1,13 +1,17 @@
 #include <stdlib.h>
+#include <iostream>
+#include <string>
 #include "tempo.h"
 #include "listadedepartamentos.h"
 #include "listadeuniversidades.h"
 #include "listadedisciplinas.h"
-#include <iostream>
+#define NOME_ARQUIVO "dados.dat"
 using namespace std;
 class Principal
 {
 public:
+    void gravar_dados();
+    void recuperar_dados();
     void menu();
     void menu_cadastro();
     void menu_leitura();
@@ -18,9 +22,8 @@ public:
     void cadastro_aluno_novo();
     void cadastro_aluno_em_disc();
     void cadastro_aluno_em_disc(Aluno* a);
-    Universidade* localiza_uni(string n);
-    Departamento* localiza_dep(string n);
-    Disciplina* localiza_disc(string n);
+    void le_universidades();
+    void le_departamentos();
     Principal();
     ~Principal();
 private:

@@ -6,6 +6,7 @@ ElemDep::ElemDep()
     prox = NULL;
     anterior = NULL;
     departamento_apontado = NULL;
+    id_dep = 0;
 }
 void ElemDep::adiciona_departamento_apontado(Departamento* d)
 {
@@ -34,4 +35,8 @@ ElemDep* ElemDep::get_anterior()
 Departamento* ElemDep::get_dep_apontado()
 {
     return departamento_apontado;
+}
+void ElemDep::set_id(int i)
+{
+    id_dep = i;
 }

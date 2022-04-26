@@ -10,6 +10,7 @@ public:
     void inicializa_departamento(Departamento* d);
     void adiciona_disciplina(Disciplina* a);
     void remove_disciplina(string n);
+    Disciplina* localiza_disc(string n);
     void mostra_disciplinas();
     ElemDisciplina* get_primeira_disc();
     ListaDeDisciplinas(Departamento* d = NULL);
